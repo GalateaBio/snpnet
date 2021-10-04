@@ -226,8 +226,7 @@ inferFamily <- function(phe, phenotype, status){
 #' @export
 readIDsFromPsam <- function(psam){
     df <- data.table::fread(psam) %>%
-    dplyr::rename('FID' = '#FID') %>%
-    dplyr::mutate(ID = paste(FID, IID, sep='_'))
+    dplyr::rename('IID' = '#IID') %>%
     df$ID
 }
 
